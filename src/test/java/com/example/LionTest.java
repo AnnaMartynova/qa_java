@@ -33,28 +33,73 @@ class LionTest {
     }
 
     @Test
-    void testGetFood() throws Exception {when(feline.eatMeat()).thenReturn(List.of("Мясо"));
+    void testGetFoodReturnsCorrectFood() throws Exception {
+        when(feline.eatMeat()).thenReturn(List.of("Мясо"));
 
         Lion lion = new Lion("Самец", feline);
+
         assertEquals(List.of("Мясо"), lion.getFood());
+    }
+
+    @Test
+    void testGetFoodCallsEatMeatMethod() throws Exception {
+        when(feline.eatMeat()).thenReturn(List.of("Мясо"));
+
+        Lion lion = new Lion("Самец", feline);
+        lion.getFood();
+
         verify(feline).eatMeat();
     }
 
     @Test
-    void testGetKittens() throws Exception {
+    void testGetKittensReturnsCorrectValue() throws Exception {
         when(feline.getKittens()).thenReturn(3);
 
         Lion lion = new Lion("Самец", feline);
+
         assertEquals(3, lion.getKittens());
+    }
+
+    @Test
+    void testGetKittensCallsFelineMethod() throws Exception {
+        when(feline.getKittens()).thenReturn(3);
+
+        Lion lion = new Lion("Самец", feline);
+        lion.getKittens();
+
         verify(feline).getKittens();
     }
 
     @Test
-    void testConstructorInjectsFeline() throws Exception {
+    void testConstructorCreatesLionSuccessfully() throws Exception {
         Lion lion = new Lion("Самец", feline);
         assertNotNull(lion);
+    }
 
+    @Test
+    void constructorShouldCreateLionObject() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        assertNotNull(lion);
+    }
+
+    @Test
+    void getKittensShouldReturnValueFromFeline() throws Exception {
+        Lion lion = new Lion("Самец", feline);
         when(feline.getKittens()).thenReturn(1);
-        assertEquals(1, lion.getKittens());
+
+        int result = lion.getKittens();
+
+        assertEquals(1, result);
+        verify(feline).getKittens();
+    }
+
+    @Test
+    void getKittensShouldReturnDifferentValueFromFeline() throws Exception {
+        Lion lion = new Lion("Самец", feline);
+        when(feline.getKittens()).thenReturn(3);
+
+        int result = lion.getKittens();
+
+        assertEquals(3, result);
     }
 }

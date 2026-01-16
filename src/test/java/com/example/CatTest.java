@@ -20,12 +20,21 @@ class CatTest {
     }
 
     @Test
-    void testGetFood() throws Exception {
+    void testGetFoodReturnsCorrectValue() throws Exception {
         Cat cat = new Cat(feline);
         List<String> expectedFood = List.of("Мясо", "Рыба");
         when(feline.eatMeat()).thenReturn(expectedFood);
 
         assertEquals(expectedFood, cat.getFood());
+    }
+
+    @Test
+    void testGetFoodCallsEatMeat() throws Exception {
+        Cat cat = new Cat(feline);
+        when(feline.eatMeat()).thenReturn(List.of("Мясо", "Рыба"));
+
+        cat.getFood();
+
         verify(feline).eatMeat();
     }
 
