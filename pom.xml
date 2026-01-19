@@ -124,10 +124,6 @@
                         <goals>
                             <goal>report</goal>
                         </goals>
-                        <configuration>
-                            <formats>XML,HTML</formats>
-                            <outputDirectory>${project.build.directory}/jacoco-report</outputDirectory>
-                        </configuration>
                     </execution>
                     <execution>
                         <id>check</id>

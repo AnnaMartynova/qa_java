@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.LionTest" time="0.019" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.example.LionTest" time="0.054" tests="15" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="24"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -14,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="RU"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/24.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/annamartynova/IdeaProjects/qa_java/target/surefire 2026-01-16T13-04-38_235-jvmRun1 surefire-20260116130438601_1tmp surefire_0-20260116130438601_2tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /Users/annamartynova/IdeaProjects/qa_java/target/surefire 2026-01-19T12-15-50_921-jvmRun1 surefire-20260119121550961_1tmp surefire_0-20260119121550961_2tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/annamartynova/IdeaProjects/qa_java/target/test-classes:/Users/annamartynova/IdeaProjects/qa_java/target/classes:/Users/annamartynova/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.11.0/junit-jupiter-api-5.11.0.jar:/Users/annamartynova/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/annamartynova/.m2/repository/org/junit/platform/junit-platform-commons/1.11.0/junit-platform-commons-1.11.0.jar:/Users/annamartynova/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/annamartynova/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.11.0/junit-jupiter-engine-5.11.0.jar:/Users/annamartynova/.m2/repository/org/junit/platform/junit-platform-engine/1.11.0/junit-platform-engine-1.11.0.jar:/Users/annamartynova/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.11.0/junit-jupiter-params-5.11.0.jar:/Users/annamartynova/.m2/repository/org/mockito/mockito-core/5.14.2/mockito-core-5.14.2.jar:/Users/annamartynova/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/annamartynova/.m2/repository/org/mockito/mockito-junit-jupiter/5.14.2/mockito-junit-jupiter-5.14.2.jar:/Users/annamartynova/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar:/Users/annamartynova/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar:"/>
@@ -60,15 +60,19 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="68.0"/>
   </properties>
-  <testcase name="testGetKittensCallsFelineMethod" classname="com.example.LionTest" time="0.002"/>
-  <testcase name="testConstructorCreatesLionSuccessfully" classname="com.example.LionTest" time="0.001"/>
-  <testcase name="getKittensShouldReturnDifferentValueFromFeline" classname="com.example.LionTest" time="0.002"/>
-  <testcase name="getKittensShouldReturnValueFromFeline" classname="com.example.LionTest" time="0.003"/>
-  <testcase name="testGetKittensReturnsCorrectValue" classname="com.example.LionTest" time="0.001"/>
-  <testcase name="testInvalidSexThrowsException" classname="com.example.LionTest" time="0.002"/>
-  <testcase name="testGetFoodCallsEatMeatMethod" classname="com.example.LionTest" time="0.001"/>
-  <testcase name="constructorShouldCreateLionObject" classname="com.example.LionTest" time="0.0"/>
-  <testcase name="testFemaleLionNoMane" classname="com.example.LionTest" time="0.0"/>
-  <testcase name="testMaleLionHasMane" classname="com.example.LionTest" time="0.001"/>
-  <testcase name="testGetFoodReturnsCorrectFood" classname="com.example.LionTest" time="0.002"/>
+  <testcase name="getKittens_CallsGetKittensMethod" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="constructor_WithValidSex_CreatesLion(String)[1]" classname="com.example.LionTest" time="0.002"/>
+  <testcase name="constructor_WithValidSex_CreatesLion(String)[2]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getFood_ReturnsFoodFromFeline" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="constructor_WithInvalidSex_ThrowsException(String)[1]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="constructor_WithInvalidSex_ThrowsException(String)[2]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="constructor_WithInvalidSex_ThrowsException(String)[3]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getKittens_ReturnsCountFromFeline(int)[1]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getKittens_ReturnsCountFromFeline(int)[2]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getKittens_ReturnsCountFromFeline(int)[3]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getKittens_ReturnsCountFromFeline(int)[4]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getKittens_ReturnsCountFromFeline(int)[5]" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="getFood_CallsEatMeatMethod" classname="com.example.LionTest" time="0.001"/>
+  <testcase name="doesHaveMane_ForGivenSex_ReturnsCorrectValue(String, boolean)[1]" classname="com.example.LionTest" time="0.008"/>
+  <testcase name="doesHaveMane_ForGivenSex_ReturnsCorrectValue(String, boolean)[2]" classname="com.example.LionTest" time="0.0"/>
 </testsuite>
